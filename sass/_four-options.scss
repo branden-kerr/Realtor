@@ -1,0 +1,72 @@
+.four-options {
+  overflow: hidden;
+  position: relative;
+  grid-row: 4 / 5;
+  grid-column: sidebar-start / full-end;
+  cursor: pointer;
+
+  &__text {
+    z-index: 10;
+    font-family: $font-tertiary;
+    color: white;
+    font-size: 5rem;
+    width: max-content;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    font-stretch: condensed;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    @media only screen and (max-width: 782px) {
+      font-size: 2.5rem;
+      letter-spacing: 1.5px;
+    }
+    
+  }
+
+  &__container {
+    // background-color: blue;
+    width: 50%;
+    height: 50%;
+    float: left;
+    position: relative;
+    overflow: hidden;
+
+    @media only screen and (max-width: $bp-phone-big) {
+      width: 100%;
+      height: 25%;
+    }
+
+    &:hover > img {
+      filter: brightness(60%);
+      transform: scale(1.05);
+    }
+
+    // It took me a while to figure out the img positioning even though I'd done it before.
+    // The key components were overflow: hidden; to prevent overflow obviously and then also
+    // something that I learned newly this time was object-position: x and y; This positions
+    // the image
+    &--img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: all 0.4s ease;
+      z-index: 1;
+      position: absolute;
+      transition: all $transition-options;
+
+      &--1 {
+        object-position: 0 -69px;
+
+
+      }
+
+      &--2 {
+        object-position: default;
+      }
+    }
+  }
+}

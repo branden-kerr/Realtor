@@ -1,0 +1,238 @@
+%input {
+    width: 100%;
+    height: 62px;
+    background: rgba(0,0,0,.4);
+    font-size: 14px;
+    letter-spacing: .24em;
+    color: #fff;
+    text-transform: uppercase;
+    border: none;
+    padding-left: 22px;
+    padding-right: 22px;
+    outline: none;
+
+    @media only screen and (max-width: 565px) {
+        font-size: 9px;
+    }        
+}
+
+.contact {
+    position: relative;
+    grid-row: 6 / 7;
+    grid-column: sidebar-start / full-end;
+    background-image: url('..//img/contact-background.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+
+
+    &__color-overlay {
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+
+        background-image: linear-gradient(to bottom, 
+        rgba(255,255,255, .95) 7%,
+         rgba(255,255,255,.25));
+    }
+
+    &__container {
+        width: 75%;
+        position: absolute;
+        top: 35%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin-top: 4rem;
+
+        @media only screen and (max-width: 440px) {
+            margin-top: 12rem;
+        }
+
+    }
+    // Can we Connect
+    &__text {
+        margin-bottom: 2rem;
+        text-align: center;
+        & span {
+            display: block;
+            letter-spacing: .4em;
+            font-size: 24px;
+            color: #000;
+            margin-bottom: 10px;
+            text-align: center;
+
+        }
+        font-family: $font-secondary;
+        text-transform: uppercase;
+        font-weight: 400;
+        font-size: 80px;
+        letter-spacing: .034em;
+        color: #832920;
+        line-height: 1;
+
+        @media only screen and (max-width: 565px) {
+            font-size: 50px;
+        }     
+    }
+
+    &__form {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+    }
+
+    &__div {
+        width: 50%;
+        padding: .4rem;
+    }
+
+    &__button {
+        position: absolute;
+        bottom: 1rem;
+        right: 1rem;
+ 
+    }
+
+    &__submit {
+        // width: 8rem;
+        background-color: #DEBF89;
+        text-transform: uppercase;
+        padding: 2rem 4rem;
+        font-size: 1.4rem;
+        outline: none;
+        border: none;
+        font-weight: 700;
+        font-family: $font-primary;
+        letter-spacing: .26em;
+
+
+    }
+
+    &__message {
+        width: 100%;
+        padding: .4rem;
+        padding-bottom: 1.2rem;
+        margin: .4rem;
+        margin-top: -.4rem;
+        background: rgba(0,0,0,.4);
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        position: relative;
+        // padding-left: Math(22px + .4rem);
+
+
+        & > textarea {
+            @extend %input;
+            height: 20rem;
+            padding-top: 1rem;
+            width: 100%;
+            margin-left: -1.5rem;
+            background-color: transparent;
+            font-family: $font-primary;
+    
+            &::-webkit-input-placeholder {
+                color: white;                
+            }
+        }
+    }
+
+    &__input {
+        @extend %input;
+
+        &::-webkit-input-placeholder {
+            color: white;
+        }
+    }
+}
+
+.radio {
+    width: 100%;
+    padding: .4rem;
+    &__encapsulator {
+        width: 100%;
+        background: rgba(0,0,0,.4);
+        padding: 30px 20px;
+    }
+
+    // this is responsible for making the Buy/Sell buttons line up. Its the parent setting up positioning
+    .containers {
+        position: relative;
+        display: inline-block;
+        width: 10rem;
+        vertical-align: middle;
+
+        @media only screen and (max-width: 468px) {
+            font-size: 9px;
+        }
+    }
+
+    &__radio-input-text {
+        position: absolute;
+        left: 60%;
+        font-size: 14px;
+        text-transform: uppercase;
+        color: rgba(255,255,255, .6);
+        font-family: $font-primary;
+        letter-spacing: .14em;
+        
+        @media only screen and (max-width: 565px) {
+            left: 1.2rem;
+            font-size: 10px;
+           }   
+        @media only screen and (max-width: 468px) {
+            font-size: 9px;
+        }
+    }
+
+    &__text {
+        font-size: 14px;
+        text-transform: uppercase;
+        color: rgba(255,255,255, .6);
+        font-family: $font-primary;
+        letter-spacing: .14em;
+        margin-left: 1.2em;
+        outline: none;
+        display: inline-block;
+        // transform:scale(1.3,1.0);
+        font-weight: 300;
+        margin-right: 1.5rem;
+
+        @media only screen and (max-width: 565px) {
+            font-size: 9px;
+            width: 100%;
+            margin-bottom: 2rem;
+        }   
+    }
+    // Next code
+    &__boxer {
+        left: 20%;
+        position: absolute;
+        height: 2rem;
+        width: 2rem;
+        border-radius: 50%;
+        background-color: rgb(196, 196, 196);
+        display: inline-block;
+        // transform: translateY(20%);
+
+        @media only screen and (max-width: 565px) {
+         left: 50%;
+         height: 1.5rem;
+         width: 1.5rem;
+        }   
+
+    }
+
+    & input {
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+    }
+    // makes it start off with the right color
+    .containers input:checked ~ .radio__boxer {
+        background-color: rgb(131,42,33);
+      }
+}

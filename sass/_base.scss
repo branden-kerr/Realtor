@@ -1,0 +1,106 @@
+// COLORS
+
+$color-primary: #481925;
+$color-secondary: #a2906f;
+$color-tertiary: rgb(230, 193, 138);
+$color-quaternary: #44434a;
+$color-quinary: #212030;
+
+$color-grey-light-1: #f9f7f6;
+$color-grey-light-2: #aaa;
+$color-grey-light-3: #9d9d9d;
+
+$color-grey-dark-1: #54483a;
+$color-grey-dark-2: #6d5d4b;
+
+// TRANSITIONS TIMES
+$transition-1: 0.6s;
+$transition-2: 0.25s;
+$transition-options: 0.15s;
+$transition-c: 0.35s;
+
+//FONTS
+$font-primary: "PT Sans Narrow", sans-serif;
+$font-secondary: "Cormorant Garamond", serif;
+$font-tertiary: "Cinzel", serif;
+$font-quaternary: "Poppins", sans-serif;
+
+// RESPONSIVE BREAKPOINTS
+$bp-phone-small: 23.5em;  // 376
+$bp-phone-big: 25.9em;    // 414.4
+$bp-ipad: 48em;           // 768 
+$bp-pro: 64em;            // 1024
+
+// PIXEL TO REAL LENGTH
+//  1 inch = 3.5 rem
+//  1 pixel = .72 mm
+
+/* MOBILE VIEWPORT SIZES BY OCCURANCE RATE
+375x667  --> 25.98%
+360x640  --> 21.22%
+414x736  --> 10.53%
+320x568  --> 9.83%
+360x740  --> 4.99%
+375x812  --> 4.91% */
+
+/*TABLET VIEWPORT SIZES BY OCCURANCE RATE
+768x1024  --> 75.23%
+1280x800  --> 3.97%
+1024x1366  --> 3.55%
+834x1112  --> 2.52%
+800x1280   --> 1.86%
+1024x768  --> 1.59%*/
+
+/*DESKTOP VIEWPORT SIZES BY OCCURANCE RATE
+1920x1080  --> 21.72%
+1366x768  --> 18.57%
+1440x900  --> 8.94%
+1280x800  --> 6.1%
+1536x864  --> 6.05%
+1600x900  --> 5.28%*/
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+
+  @media only screen and (max-width: $bp-pro) {
+    font-size: 50%;
+  }
+}
+
+body {
+}
+
+.container {
+  display: grid;
+
+  grid-template-columns:
+    [sidebar-start] 9rem [sidebar-end center-start]
+    repeat(8, [col-start] minmax(min-content, 1fr) [col-end])
+    [center-end] 9rem [full-end];
+
+  grid-template-rows: /*1-->*/ 9rem /*2-->*/ 45vw /*3-->*/ min-content /*4-->*/ 65vw /*5-->*/ 93rem /*6-->*/ 175vh /*7-->*/ min-content; 
+
+
+  @media only screen and (max-width: $bp-pro) {
+    grid-template-rows: /*1-->*/ 9rem /*2-->*/ 45vw /*3-->*/ min-content /*4-->*/ 65vw /*5-->*/ 145rem /*6-->*/ 125vh /*7-->*/ min-content;
+  }
+
+  @media only screen and (max-width: 910px) {
+    grid-template-rows: /*1-->*/ 9rem /*2-->*/ 45vw /*3-->*/ min-content /*4-->*/ 65vw /*5-->*/ 145rem /*6-->*/ 175vh /*7-->*/ min-content;
+  }
+
+  @media only screen and (max-width: 420px) {
+    grid-template-rows: /*1-->*/ 9rem /*2-->*/ 90vw /*3-->*/ min-content /*4-->*/ 125vh /*5-->*/ 110rem /*6-->*/ 110vh /*7-->*/ min-content;
+  }
+
+}

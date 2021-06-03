@@ -1,0 +1,57 @@
+.sidebar {
+    display: flex;
+    flex-direction: column;  // makes it go down
+    justify-content: center; // main center (vertical itc)
+    align-items: center;  //Cross (horizontal itc) center
+
+    grid-column: sidebar-start / sidebar-end;
+    grid-row: 1 / 4;
+
+    // background-color: rgba(#fff, .8);
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.8) 50% , rgba(#fff, 0) );
+    top: 0;
+    left: 0;
+
+    @media only screen and (max-width: $bp-ipad) {
+        display: none;
+    }
+
+    &__wrapper {
+        position: fixed;
+        bottom: 23%;
+        // background-color: darkblue;
+        z-index: 555;
+    }
+
+    &__item {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 1.5rem;
+        background-color: $color-tertiary;
+        border-radius: 50%;
+        height: 4.1rem;
+        width: 4.1rem;
+        transition: all .25s;
+
+        z-index: 500000000000000000000000000;
+
+        &:hover {
+            background-color: $color-grey-light-2;
+        }
+    }
+
+    &__item:hover &__social {
+        fill: $color-tertiary
+    }
+
+    &__social  {
+        width: 1.6rem;
+        height: 1.6rem;
+        position: relative;
+        transition: all .25s;
+
+        z-index: 50000000000000000000000;
+    }
+}
